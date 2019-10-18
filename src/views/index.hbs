@@ -1,0 +1,47 @@
+<div class="card">
+    <div class="card-header bg-dark text-white">
+        <h3><i class="fa fa-image"></i> Subida de imagen</h3>
+    </div>
+    <div class="card-body">
+        <form action="/imagen/create" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="custom-file">
+                         <input type="file" class="custom-file-input" name="imagen" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" required>
+                        <label class="custom-file-label" for="inputGroupFile01">Seleccione Imagen</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <input type="text" name="nombre" id="" placeholder="Nombre" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <textarea name="descripcion" id="" cols="30" rows="3" placeholder="Descripcion" class="form-control" required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-success"><i class="fa fa-upload"></i> Subir Imagen</button>
+        </form>
+    </div>
+</div>
+
+<div class="card mt-4">
+    <div class="card-header bg-dark text-white">
+        <h3><i class="fa fa-images"></i> Imagenes subidas recientemente</h3>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            {{#each imagenes}}
+            <div class="col-md-4">
+                <a href="/imagen/{{_id}}">
+                    <img src="{{ruta}}" alt="" class="w-100 h-100 img-thumbnail">
+                </a>
+            </div>
+            {{/each}}
+
+        </div>
+    </div>
+</div>
+
+    

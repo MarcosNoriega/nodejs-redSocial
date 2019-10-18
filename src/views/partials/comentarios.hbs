@@ -1,0 +1,26 @@
+{{#if sidebar.comentarios}}
+<div class="card mb-2">
+    <div class="card-header bg-dark text-white">
+        <h5><i class="fa fa-comments"></i> Ultimos Comentarios</h5>
+    </div>
+
+    <div class="card-body">
+        {{#each sidebar.comentarios}}
+        <div class="row">
+            <div class="col">
+                <img src="{{imagen.ruta}}" alt="" class="w-100 h-100 img-thumbnail">
+            </div>
+
+            <div class="col">
+                <blockquote class="col">
+                    <p class="lead">{{comentario}}</p>
+                    <footer>
+                        {{nombre}} - <span class="tiempo">{{timestamp}}</span>
+                    </footer>
+                </blockquote>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
+{{/if}}
